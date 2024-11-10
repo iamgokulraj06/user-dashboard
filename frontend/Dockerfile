@@ -3,7 +3,7 @@ FROM node:20.12.2 as build
 WORKDIR /usr/src/app
 
 COPY package.json package-lock.json ./
-RUN npm run i
+RUN npm i
 
 COPY . .
 RUN npm run build

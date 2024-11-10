@@ -3,6 +3,7 @@ import { Card, Button, Row, Col, Image, ListGroup , Alert} from 'react-bootstrap
 import usePostRequest from '../hooks/useApi';
 import { usePostRequestDynamicUrlFunction } from '../hooks/useApi';
 import { useNavigate } from 'react-router-dom';
+import defaultProfilePic from '../assets/userimage.png'
 
 
 
@@ -34,7 +35,7 @@ const PendingRequests = ({ pendingRequests , friendsList , setPendingRequest , s
               <Row className="align-items-center">
                 <Col xs={12} md={3} className="text-center mb-3 mb-md-0">
                   <Image
-                    src="https://via.placeholder.com/150" // Assuming placeholder as no profilePic in schema
+                    src={request.profilePic || defaultProfilePic}
                     roundedCircle
                     fluid
                     alt="Profile Pic"
@@ -75,7 +76,7 @@ const FriendsList = ({ friends }) => {
               <Row className="align-items-center">
                 <Col xs={12} md={3} className="text-center mb-3 mb-md-0">
                   <Image
-                    src="https://via.placeholder.com/150" // Assuming placeholder as no profilePic in schema
+                    src={friend.profilePic || defaultProfilePic} 
                     roundedCircle
                     fluid
                     alt="Friend Profile Pic"

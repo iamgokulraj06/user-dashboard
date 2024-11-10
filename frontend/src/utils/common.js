@@ -10,11 +10,11 @@ export async function postDataCustom( apiPath, body) {
         'authToken': `${token}`,
       };
   
-      const response = await axios.post(`${apiUrl}${apiPath}`, body, { headers });
-      return response;
+      const response = await axios.post(`${apiUrl}${apiPath}`, body, { headers , validateStatus: () => true } , );
+      return response
+
     } catch (err) {
-      console.error(err);
-      throw new Error(err.message); // or you can return null, depending on your preference
+      throw new Error(err.message); 
     }
   }
   

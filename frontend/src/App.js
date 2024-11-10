@@ -21,7 +21,7 @@ function App() {
 
 function AppContent() {
   const location = useLocation();
-  const noSideBarRoutes = ["/login"]
+  const noSideBarRoutes = ["/login" , "/"]
 
   return (
     <div className="App">

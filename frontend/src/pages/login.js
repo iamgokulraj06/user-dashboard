@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import myImage from '../assets/loginpic.png';
 import { Card, Row, Col, Form, Button } from 'react-bootstrap';
 import "../styles/login.css";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(true);  // State to toggle between login and register
@@ -20,7 +21,7 @@ const AuthPage = () => {
     setErrorMessage('');  // Clear previous error messages
 
     try {
-      const response = await axios.post('http://localhost:7000/login', { email, password });
+      const response = await axios.post(`${apiUrl}/login`, { email, password });
       
       if (response.data.status === 'error') {
         setErrorMessage(response.data.message || 'Invalid credentials');
@@ -47,7 +48,7 @@ const AuthPage = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:7000/register', { 
+      const response = await axios.post(`${apiUrl}/register`, { 
         
         "name": name,
         "email": email,

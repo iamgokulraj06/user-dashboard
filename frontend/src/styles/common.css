@@ -1,0 +1,110 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
+.App {
+  display: flex;
+  height: 100vh; /* Full height of the screen */
+}
+
+.main-content {
+  overflow-y: scroll;
+  width: 100%;
+}
+
+:root {
+    --color-primary: #007bff;
+    --color-primary-dark: #0056b3;
+    --color-primary-darker: #003f7f;
+    --color-disabled: #cccccc;
+    --color-bg-light: #ffffff;
+    --color-bg-dark: #333333;
+    --color-border-light: #e0e0e0;
+    --color-text-dark: #333333;
+    --color-placeholder: #888888;
+    --color-input-border: #cccccc;
+    --color-focus-border: rgba(0, 123, 255, 0.5);
+    --color-bg-common:#F0F4F9;
+    --color-sidebar-bg:#2c3e50;
+    --color-sidebar-hover:#34495e;
+    --color-sidebar-text:#fff;
+    --color-sidebar-hamburger:#333;
+  }
+  
+  body {
+    font-family: "Manrope", 'DM Sans', sans-serif !important;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    background-color:  var(--color-bg-common);
+    overflow-y: hidden;
+  }
+  
+  .common-btn {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .common-btn:hover {
+    background-color: var(--color-primary-dark);
+  }
+  
+  .common-btn:active {
+    background-color: var(--color-primary-darker);
+  }
+  
+  .common-btn:disabled {
+    background-color: var(--color-disabled);
+    cursor: not-allowed;
+  }
+  
+  .common-card {
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--color-border-light);
+    border-radius: 8px;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .common-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .common-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  
+  .common-card-body {
+    font-size: 1rem;
+    color: var(--color-text-dark);
+  }
+  
+  .common-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-input-border);
+    border-radius: 6px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  .common-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 4px var(--color-focus-border);
+  }
+  
+  .common-input::placeholder {
+    color: var(--color-placeholder);
+    font-size: 0.95rem;
+  }

@@ -1,0 +1,86 @@
+/* Sidebar styles */
+
+/* Default desktop styles */
+.custom-sidebar {
+  width: 250px;
+  background-color: var(--color-sidebar-bg);
+  padding-top: 20px;
+}
+
+/* Hide sidebar on mobile initially */
+@media (max-width: 768px) {
+  .custom-sidebar {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: var(--color-sidebar-bg);
+  }
+
+  /* Show sidebar when open */
+  .custom-sidebar.open {
+    display: block;
+  }
+}
+
+/* Sidebar list styling */
+.custom-sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.custom-sidebar ul li {
+  padding: 15px;
+  color: var(--color-sidebar-text);
+}
+
+.custom-sidebar ul li a {
+  text-decoration: none;
+  color: var(--color-sidebar-text);
+  display: block;
+}
+
+.custom-sidebar ul li:hover {
+  background-color: var(--color-sidebar-hover);
+}
+
+/* Hamburger icon styling */
+.hamburger {
+  display: none; /* Hidden on desktop */
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: var(--color-sidebar-hamburger);
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1001; /* Ensures it sits above other elements */
+}
+
+/* Close button inside sidebar */
+.close-btn {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: var(--color-sidebar-text);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* Show hamburger and close button on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: inline; /* Ensure it shows up on mobile */
+  }
+  
+  .close-btn {
+    display: block;
+  }
+}

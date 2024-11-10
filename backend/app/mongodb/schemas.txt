@@ -1,0 +1,101 @@
+### list of Collections
+# questions
+# qnGroups
+# answers
+# reviews
+# users
+# config
+# rework
+# dataSet
+
+### Collection : questions
+[
+    {
+        "questionType": "text" | "audio",
+        "data": <String> | <pathToAudioFile>,
+        "adminId": <userHash>,
+        "questionId": <questionId>,
+        "groupId": <groupId>
+    }
+]
+
+### Collection : qnGroups
+[
+    {
+        "questionType": "text" | "audio"
+        "type: "rework" (optional),
+        "groupId": <groupId>,
+        "questionIds": [
+            <questionId>,
+            <questionId>,
+            <questionId>,
+            <questionId>
+        ],
+        "trainerId": <userHash>,
+        "reviewerId": [<userHash>],
+        "completedReviews": [<userHash>],
+        "status": "inProgress" | "inReview" | "completed"
+    }
+]
+
+#### Collection : answers
+[
+    {
+        answer: <String>,
+        questionId: <questionId>,
+        trainerId: <userHash>
+    }
+]
+
+### Collection : reviews
+[
+    {
+        questionId: <questionId>,
+        reviewerId: <userHash>,
+        score: [0-100],
+        comments: <String> | False
+    }
+]
+
+### Collection : users
+[
+    {
+        email: <String>,
+        role: "admin" | "trainer" | "reviewer",
+        hash: <String>,
+        dataType: <Array> ["text", "audio"]
+    }
+]
+
+### Collection : config
+[
+    {
+        version: 1 | <int>,
+        recordsCountPerGroup: 10 | <int>,
+        reviewerCount: 2 | <int>
+    }
+]
+
+### Collection : rework
+[
+    {
+        trainerId: <userHash>,
+        questionId: <questionId> (String),
+        reviewerId: <Array> (userHash),
+        status: "init" | "assigned" | "inReview" | "completed",
+        answer: <String>,
+        groupId: <groupId>,
+        questionType: "text" | "audio"
+    }
+]
+
+### Collection : dataSet
+[
+    {
+        type: "text" | "audio",
+        question: <String> | <pathToAudioFile>,
+        questionId: <questionId>,
+        answer: <String>,
+        score: <int> (0 | 1 | 2)
+    }
+]

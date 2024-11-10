@@ -1,0 +1,43 @@
+version: '3.7'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    
+    volumes:
+      - ./backend:/app
+    ports:
+      - "7000:7000"
+
+    env_file:
+      - .env
+
+     
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+
+    ports:
+      - "80:80"
+
+
+  redis: 
+    image: redis:latest
+    volumes:
+      - user-dashboard-redis:/data
+    ports:
+      - "6379:6379"
+
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - user-dashboard-mongo:/data/db
+
+volumes:
+  user-dashboard-mongo:
+  user-dashboard-redis:
